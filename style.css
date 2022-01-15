@@ -1,0 +1,53 @@
+/* ecart sur le côté */
+.carousel {
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+/* ecart dans les images de produits */
+.card
+{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* ecart sur les côtés, partie lignes de produit */
+.card-group
+{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+}
+
+/* homogénisation des images des livres */
+.card-img-top
+{
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+}
+
+
+/* couleur des liens de la barre de navigation */
+.nav-link
+{
+    color: white;
+}
+
+/* Changement couleur titre du panier */
+.modal-title
+{
+    color:black;
+}
+
+/* Navbar justify */
+.navbar-collapse
+{
+    margin-left: auto;
+}
+
+/* bouton panier */
+#boutonPanier
+{
+    margin-right: auto;
+}
