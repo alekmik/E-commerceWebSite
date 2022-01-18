@@ -1,17 +1,17 @@
-/* ecart sur le côté */
+/* ecart sur le côté du carousel*/
 .carousel {
     padding-left: 14%;
     padding-right: 14%;
 }
 
-/* ecart dans les images de produits */
+/* ecart dans les images des élements "cards" */
 .card
 {
     padding-left: 1%;
     padding-right: 1%;
 }
 
-/* ecart sur les côtés, partie lignes de produit */
+/* écart sur les côtés, pour les groupes de produit */
 .card-group
 {
     padding-left: 1%;
@@ -32,6 +32,7 @@
 .nav-link
 {
     color: white;
+    font-weight:400;
 }
 
 /* Changement couleur titre du panier */
@@ -40,14 +41,49 @@
     color:black;
 }
 
+/* Changement de la couleur de police pour le body de la modal */
+.modal-body
+{
+    color:rgb(124, 124, 124);
+}
+
 /* Navbar justify */
 .navbar-collapse
 {
     margin-left: auto;
 }
 
-/* bouton panier */
-#boutonPanier
+/* espace entre les liens navbar */
+.navbar-expand-lg .navbar-nav .nav-link 
 {
-    margin-right: auto;
+    padding-right: 5.5rem;
+    padding-left: 5.5rem;
+    padding-top: 1.5rem;
 }
+
+.dropbtn
+{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.boutonArrondi
+{
+    border: none;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+
+.boutonArrondi:hover
+{
+    border-radius: 12px;
+    background-color: #666666;
+    color: white;
+}
+
+
+

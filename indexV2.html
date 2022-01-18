@@ -11,16 +11,17 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <!-- Connection CSS -->
+    <!-- Connexion avec le fichier CSS -->
     <link href="style.css" rel="stylesheet">
 
     <!-- Titre de la page -->
     <title>HomeBook - Accueil</title>
   </head>
   <body>
-
-    <!-- Partie Barre de Navigation -->
-    <header>
+    <!-- Partie Barre de Navigation 
+    Element obligatoire projet : "menu servant à naviguer entre les différentes catégories
+    de produits et permettant d’accéder au panier" -->
+    <header id="lienAccueil">
 
         <!-- fond de la barre -->
         <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
@@ -34,19 +35,28 @@
                 </a>
                 <div class="collapse navbar-collapse d-flex justify-content-evenly" id="navbarNavAltMarkup">
 
-                    <!-- Liens disponible dans la barre (Accueil, Livres, A paraître et le panier avec
+                    <!-- Liens disponible dans la barre (Accueil, Livres, Newsletter et le panier avec
                         sa modal) -->
                     <div class="navbar-nav ">
-                        <!-- liens null, connexion avec les sections en cours -->
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                        <a class="nav-link" href="#">Livres</a>
-                        <a class="nav-link" href="#">À paraître</a>
-                        <a class="nav-link" href="#">
+                        
+                        <!-- connexion avec les sections de la page -->
+                        <a class="nav-link active" aria-current="page" href="#lienAccueil">Accueil</a>
+                        <a class="nav-link" href="#lienLivres">Livres</a>
+                        <a class="nav-link" href="#lienNewsletter">Newsletter</a>
+                        <a class="nav-link" href="#"  id="#boutonPanier">
 
-                            <!-- Bouton jaune lien vers la modal  -->
-                            <button type="button" class="btn btn-warning d-grid" data-bs-toggle="modal" data-bs-target="#votrePanier" id="#boutonPanier">
+                            <!-- Bouton jaune lien vers la modal  
+                            Au clic sur le lien du panier, 
+                            il apparaîtra une fenêtre modale-->
+                            <button type="button" class="btn btn-warning d-grid position-relative" data-bs-toggle="modal" data-bs-target="#votrePanier">
+                                
                                 <!-- Icone panier -->
                                 <i class="fas fa-shopping-basket fa-2x"></i>
+
+                                <!-- bouton pilule rouge - notification (ne fonctionne pas) -->
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                <span class="visually-hidden">unread messages</span>
                             </button>
 
                             <!-- Intérieur de la modal - Panier -->
@@ -62,7 +72,7 @@
 
                                     <!-- Corps de la modale-->
                                     <div class="modal-body">
-                                    ...
+                                        Votre panier est vide
                                     </div>
 
                                     <!-- Pied de la modale-->
@@ -70,7 +80,6 @@
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                                         <button type="button" class="btn btn-warning">Acheter</button>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </a>
@@ -80,7 +89,7 @@
         </nav>
     </header>
 
-
+    
 
     <!-- Partie carrousel : affiche large pour évènements en cours - ici les soldes d'Hiver -->
     <section>
@@ -90,7 +99,7 @@
               <img src="imagesCarrousel/SOLDES HIVER V3.png" class="d-block img-fluid img-responsive" alt="Image Soldes d'Hiver">
             </div>
             <div class="carousel-item">
-              <img src="imagesCarrousel/SOLDES HIVER V3.png" class="d-block img-fluid " alt="Image Soldes d'Hiver">
+              <img src="imagesCarrousel/SOLDES HIVER V3.png" class="d-block img-fluid img-responsive" alt="Image Soldes d'Hiver">
             </div>
           </div>
         </div>
@@ -99,8 +108,9 @@
 
 
 
-    <!-- Partie corps de la page web - les PRODUITS  -->
-    <section>
+    <!-- Partie corps de la page web - les PRODUITS  
+                Sous chacun des produits, il devra y avoir un lien "Achat / Ajouter au panier" -->
+    <section id="lienLivres">
 
         <!-- Titre de la section : "Nos livres"-->
         <h1 class="text-center pb-2">Nos livres</h1>
@@ -110,44 +120,116 @@
             
             <!-- Produit n°1 -->
             <div class="card" style="width: 18rem;">
+
+                <!-- Image de l'article n°1-->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre1MortelleAdeleHorsSerie.jpg" class="card-img-top" alt="livre Mortelle Adelle">
+                
+                <!-- Boîte contenu du produit n°1 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Livres pour enfants"-->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Livres pour enfants </button></small></p>
+                    
+                    <!-- Titre du produit n°1 -->
                     <h5 class="card-title">Mortelle adèle - Au pays des contes défaits - HORS-SERIE</h5>
+
+                    <!-- Description du produit n°1 -->                    
                     <p class="card-text">Embarquez pour une grande aventure au pays des Contes Défaits avec Mortelle Adèle !</p>
+
+                    <!-- Prix de l'article n°1 -->
                     <h5 class="text-danger">13,90 €</h5>
-                    <a href="#" class="btn btn-warning">Ajouter au panier</a>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+                    
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
+                    <a href="#" class="btn btn-warning addToCart">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Produit n°2 -->
             <div class="card" style="width: 18rem;">
+                
+                <!-- Image de l'article n°2-->
                 <img src="./imagesLivres/livre2LesRecettesStudioGhibli.jpg" class="card-img-top" alt="livre recettes film studio ghibli">
+                
+                <!-- Boîte contenu du produit n°2 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Loisirs et vie pratique" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Loisirs et vie pratique</button></small></p>
+                    
+                    <!-- Titre du produit n°2 -->
                     <h5 class="card-title">Les recettes des films du Studio Ghibli</h5>
+                    
+                    <!-- Description du produit n°2 -->
                     <p class="card-text">« Chaque fois que nous créons une chose avec amour, espoir ou passion, nous donnons une âme à notre création. » Baron von Gikkingen, Le Royaume des chats.</p>
+                    
+                    <!-- Prix de l'article n°2 -->
                     <h5 class="text-danger">17,95 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Produit n°3 -->
             <div class="card" style="width: 18rem;">
+
+                <!-- Image de l'article n°3 -->
                 <img src="./imagesLivres/livre3SorcelineTome3.jpg" class="card-img-top" alt="livre sorceline tome 3">
+                
+                <!-- Boîte contenu du produit n°3 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Livres pour enfants" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Livres pour enfants</button></small></p>                    
+                    
+                    <!-- Titre du produit n°3 -->
                     <h5 class="card-title">Sorceline TOME 3 - Au Coeur De Mes Zoorigines</h5>
+
+                    <!-- Description du produit n°3 -->
                     <p class="card-text">Entrez dans le monde des créatures fantastiques !</p>
+
+                    <!-- Prix de l'article n°3 -->
                     <h5 class="text-danger">10,95 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Produit n°4 -->
             <div class="card" style="width: 18rem;">
+
+                <!-- Image de l'article n°4 -->
                 <img src="./imagesLivres/livre4UneJeunesseAuTempsDeLaShoah.jpg" class="card-img-top" alt="livre Une Jeunesse au temps de la shoah">
+                
+                <!-- Boîte contenu du produit n°4 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Histoire contemporaine" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Histoire contemporaine</button></small></p>                    
+                    
+                    <!-- Titre du produit n°4 -->
                     <h5 class="card-title">Une Jeunesse Au Temps De La Shoah - Extraits d'une vie</h5>
+                    
+                    <!-- Description du produit n°4 -->
                     <p class="card-text">Découvrez ce que Simone Veil a vécu durant son enfance.</p>
+                    
+                    <!-- Prix de l'article n°4 -->
                     <h5 class="text-danger">5,70 €</h5>
+                    
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+                    
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
@@ -162,33 +244,87 @@
 
             <!-- Product n°5 --> 
             <div class="card">
+
+                <!-- Image de l'article n°5 -->
                 <img src="./imagesLivres/livre5SpyXFamilyT1.jpg" class="card-img-top" alt="manga Spy Family">
+                
+                <!-- Boîte contenu du produit n° -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Manga" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Manga</button> <button class="boutonArrondi">Coup de coeur</button></small></p>                    
+                    
+                    <!-- Titre du produit n°5 -->
                     <h5 class="card-title">Spy x Family TOME 1</h5>
+
+                    <!-- Description du produit n°5 -->
                     <p class="card-text placeholder-glow">Sauvez le monde avec l'élite des agents (très) spéciaux : la famille Forger ! Une comédie d'espionnage pétillante !</p>
+                    
+                    <!-- Prix de l'article n°5 -->
                     <h5 class="text-danger">6,90 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success" >Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Product n°6 -->
             <div class="card">
+
+                <!-- Image de l'article n°6 -->
                 <img src="./imagesLivres/livre6LartDeLaGuerre.jpg" class="card-img-top" alt="livre Lart de la Guerre">
+                
+                <!-- Boîte contenu du produit n°6 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Livre Géopolitique</button></small></p>                    
+                    
+                    <!-- Titre du produit n°6 -->
                     <h5 class="card-title">L'art de la guerre</h5>
+
+                    <!-- Description du produit n°6 -->
                     <p class="card-text placeholder-glow">Découvrez le court traité de stratégie militaire chinois, datant de la période des Printemps et Automnes.</p>
+                    
+                    <!-- Prix de l'article n°6 -->
                     <h5 class="text-danger">6,80 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Product n°7 -->
             <div class="card">
+
+                <!-- Image de l'article n°7 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre7MyHeroAcademiaTome26.jpg" class="card-img-top" alt="manga my hero academia tome 26">
+                
+                <!-- Boîte contenu du produit n°7 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Manga" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Manga</button></small></p>                    
+                    
+                    <!-- Titre du produit n°7 -->
                     <h5 class="card-title">My Hero Academia TOME 26 - Sous un ciel d'azur</h5>
+
+                    <!-- Description du produit n°7 -->
                     <p class="card-text placeholder-glow">Lors de son match, Katsuki a su exploiter les faiblesses de ses adversaires... tout en protégeant ses camarades ! Un véritable progrès pour l'adolescent, jusque-là incapable de travailler en équipe. La barre est désormais placé très haut pour Izuku, qui va devoir se surpasser s'il veut pouvoir rivaliser...</p>
+                    
+                    <!-- Prix de l'article n°7 -->
                     <h5 class="text-danger">6,60 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
@@ -196,11 +332,29 @@
 
             <!-- Product n°8 -->
             <div class="card">
+
+                <!-- Image de l'article n°8 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre8DetectiveConan.jpg" class="card-img-top" alt="Manga Detective Conan">
+                
+                <!-- Boîte contenu du produit n°8 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Manga</button></small></p>                    
+                    
+                    <!-- Titre du produit n°8 -->
                     <h5 class="card-title">Détective conan TOME 1</h5>
+
+                    <!-- Description du produit n°8 -->
                     <p class="card-text placeholder-glow">Les bases du manga sont posées: Conan habite chez Ran et il se sert de Kogoro pour résoudre ses enquêtes incognito. Ses gadgets lui donnent un côté "James Bond"</p>
+                    
+                    <!-- Prix de l'article n°8 -->
                     <h5 class="text-danger">3,00 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
@@ -211,44 +365,117 @@
             
             <!-- Product n°9 -->
             <div class="card">
+
+                <!-- Image de l'article n°9 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre9LeSeigneurDesAnneauxIntegrale.jpg" class="card-img-top" alt="Livres Le Seigneur Des Anneaux L'intégrale">
+                
+                <!-- Boîte contenu du produit n°9 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Romans fantasy" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Romans Fantasy</button> <button class="boutonArrondi">Coup de coeur</button></small></p>                    
+                    
+                    <!-- Titre du produit n°9 -->
                     <h5 class="card-title">Le seigneur des anneaux INTEGRALE TOM 1 à TOME 3</h5>
+
+                    <!-- Description du produit n°9 -->
                     <p class="card-text placeholder-glow">Les bases du manga sont posées: Conan habite chez Ran et il se sert de Kogoro pour résoudre ses enquêtes incognito. Ses gadgets lui donnent un côté "James Bond"</p>
+                    
+                    <!-- Prix de l'article n°9 -->
                     <h5 class="text-danger">18,90 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Product n°10 -->
             <div class="card">
+
+                <!-- Image de l'article n°10 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre10CarboneSilicium.jpg" class="card-img-top" alt="BD Carbone Silicium">
+                
+                <!-- Boîte contenu du produit n°10 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "BD" & "Coup de coeur"-->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">BD</button> <button class="boutonArrondi">Coup de coeur</button></small></p>                    
+                    
+                    
+                    <!-- Titre du produit n°10 -->
                     <h5 class="card-title">Carbone & silicium</h5>
+
+                    <!-- Description du produit n°10 -->
                     <p class="card-text placeholder-glow">2046. Derniers nés des laboratoires Tomorrow Foundation, Carbone et Silicium sont les prototypes d'une nouvelle génération de robots destinés à prendre soin de la population humaine vieillissante.</p>
+                    
+                    <!-- Prix de l'article n°10 -->
                     <h5 class="text-danger">22,90 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Product n°11 -->
             <div class="card">
+
+                <!-- Image de l'article n°11 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre11sorceleurtome1LeDernierVoeu.jpg" class="card-img-top" alt="livre le sorceleur tome 1">
+                
+                <!-- Boîte contenu du produit n°11 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Roman" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Roman</button></small></p>                    
+                    
+                    <!-- Titre du produit n°11 -->
                     <h5 class="card-title">Le Sorceleur TOME 1 - Le dernier voeu</h5>
+
+                    <!-- Description du produit n°11 -->
                     <p class="card-text placeholder-glow">Un best-seller international : David Gemmell Legend Award 2009 du Meilleur roman de Fantasy.</p>
+                    
+                    <!-- Prix de l'article n°11 -->
                     <h5 class="text-danger">7,10 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
 
             <!-- Product n°12 -->
             <div class="card">
+
+                <!-- Image de l'article n°12 -->
                 <img src="./imagesLivres/images-livres-redimensionnees/livre12DesSourisEtDesHommes.jpg" class="card-img-top" alt="livre des souris et des hommes">
+                
+                <!-- Boîte contenu du produit n°12 -->
                 <div class="card-body">
+
+                    <!-- Bouton relié à la catégorie de livre : "Romans américains" -->
+                    <p class="card-text"><small class="text-muted"><button class="boutonArrondi">Romans américains</button></small></p>                    
+                    
+                    <!-- Titre du produit n°12 -->
                     <h5 class="card-title">Des souris et des hommes</h5>
+
+                    <!-- Description du produit n°12 -->
                     <p class="card-text placeholder-glow">En Californie, pendant la Grande Crise, Lennie et George vont de ferme en ferme. Ils louent leurs bras en attendant le jour où ils auront leur ferme à eux, avec un petit bout de luzerne pour élever des lapins. Lennie, malgré sa taille de colosse, n'a pas plus de malice qu'un enfant de six ans ; George veille sur lui, le protège du monde qui n'est pas tendre aux innocents.</p>
+
+                    <!-- Prix de l'article n°12 -->
                     <h5 class="text-danger">7,00 €</h5>
+
+                    <!-- Bouton vert = "Acheter" -->
+                    <a href="#" class="btn btn-success">Acheter</a>
+
+                    <!-- Bouton Jaune = "Ajouter au panier" -->
                     <a href="#" class="btn btn-warning">Ajouter au panier</a>
                 </div>
             </div>
@@ -256,23 +483,23 @@
     </section>
 
 
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="bg-light text-center text-lg-start" id="lienNewsletter">
         
-        <!-- Grid container -->
+        <!-- Conteneur de grille Bootstrap -->
         <div class="container p-4 pb-0">
           <form action="">
                 
-                <!--Grid row-->
+                <!-- Rangement des colonnes -->
                 <div class="row">
                 
-                    <!--Grid column-->
+                    <!-- Bootstrap colonne -->
                     <div class="col-auto mb-4 mb-md-0">
                         <p class="pt-2">
                             <strong>S'inscrire à notre newsletter mensuelle</strong>
                         </p>
                     </div>
         
-                    <!--Grid column-->
+                    <!-- Bootstrap colonne-->
                     <div class="col-md-5 col-12 mb-4 mb-md-0">
                     
                         <!-- Email input -->
@@ -283,12 +510,11 @@
                             </label>
                         </div>
                     </div>
-                    <!--Grid column-->
         
-                    <!--Grid column-->
+                    <!-- Bootstrap colonne -->
                     <div class="col-auto mb-4 mb-md-0">
 
-                        <!-- Submit button -->
+                        <!-- Bouton pour soumettre le texte saisi par l'utilisateur -->
                         <button type="submit" class="btn btn-secondary mb-4">
                             Rejoindre la communauté
                         </button>
@@ -296,12 +522,11 @@
                 </div>
           </form>
         </div>
-        <!-- Grid container -->
       
         <!-- Copyright -->
         <div class="text-center p-3 bg-light">
           © 2022 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/">HomeBook.com</a>
+          <a class="text-dark" href="#">HomeBook.com</a>
         </div>
         
     </footer>
@@ -324,5 +549,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+
+    <script src="main.js"></script>
   </body>
 </html>
